@@ -14,8 +14,8 @@ import java.util.Stack;
 public class PostfixExpression implements Expression {
     private StringParsers parser;
 
-    public PostfixExpression() {
-        this.parser = new StringParsers();
+    public PostfixExpression(StringParsers parser) {
+        this.parser = parser;
     }
 
     @Override

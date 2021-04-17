@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class PrioritySymbols {
-    public Collection<PrioritySymbol> prioritySymbols;
+    public Collection<PrioritySymbol> prioritySymbols() {
+        Collection<PrioritySymbol> prioritySymbols = new ArrayList<>();
 
-    public PrioritySymbols() {
-        this.prioritySymbols = new ArrayList<>();
-
-        this.prioritySymbols.add(new PrioritySymbolImpl(true,"("));
-        this.prioritySymbols.add(new PrioritySymbolImpl(false,")"));
+        prioritySymbols.add(new PrioritySymbolImpl(true, "("));
+        prioritySymbols.add(new PrioritySymbolImpl(false, ")"));
+        return prioritySymbols;
     }
 }

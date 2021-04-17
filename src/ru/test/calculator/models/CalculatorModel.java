@@ -1,13 +1,12 @@
 package ru.test.calculator.models;
 
 import ru.test.calculator.expressions.Expression;
-import ru.test.calculator.expressions.postfixexpression.PostfixExpression;
 
 public class CalculatorModel {
-    private Expression calculator;
+    private final Expression calculator;
 
-    public CalculatorModel() {
-        this.calculator = new PostfixExpression();
+    public CalculatorModel(Expression expression) {
+        this.calculator = expression;
     }
 
     public String calculate(String displayValue) {
