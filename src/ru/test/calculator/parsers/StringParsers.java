@@ -18,10 +18,7 @@ public class StringParsers {
     private Collection<Lexeme> lexemeOptions;
 
     @Autowired
-    public StringParsers(Collection<PrioritySymbol> prioritySymbols, Collection<Operation> operations) {
-        Collection<Lexeme> lexemeOptions = new ArrayList<>();
-        lexemeOptions.addAll(prioritySymbols);
-        lexemeOptions.addAll(operations);
+    public StringParsers(Collection<Lexeme> lexemeOptions) {
         this.lexemeOptions = lexemeOptions;
     }
 
