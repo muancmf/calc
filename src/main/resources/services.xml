@@ -1,26 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="calculatorView" class="ru.test.calculator.views.CalculatorView"/>
-    <bean id="prioritySymbolFactory" class="ru.test.calculator.lexemes.prioritysymbol.PrioritySymbols"/>
-    <bean id="prioritySymbols" factory-bean="prioritySymbolFactory" factory-method="prioritySymbols"/>
-    <bean id="operationFactory" class="ru.test.calculator.lexemes.operation.Operations"/>
-    <bean id="operations" factory-bean="operationFactory" factory-method="operations"/>
-    <bean id="stringParser" class="ru.test.calculator.parsers.StringParsers">
-        <constructor-arg index="0" ref="prioritySymbols"/>
-        <constructor-arg index="1" ref="operations"/>
-    </bean>
-    <bean id="postfixExpression" class="ru.test.calculator.expressions.postfixexpression.PostfixExpression">
-        <constructor-arg ref="stringParser"/>
-    </bean>
-    <bean id="calculatorModel" class="ru.test.calculator.models.CalculatorModel">
-        <constructor-arg ref="postfixExpression"/>
-    </bean>
-    <bean id="calculatorController" class="ru.test.calculator.controllers.CalculatorController">
-        <constructor-arg index="0" ref="calculatorView"/>
-        <constructor-arg name="model" ref="calculatorModel"/>
-    </bean>
+    <context:annotation-config/>
+
 </beans>

@@ -1,5 +1,7 @@
 package ru.test.calculator.expressions.postfixexpression;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.test.calculator.expressions.Expression;
 import ru.test.calculator.lexemes.Lexeme;
 import ru.test.calculator.lexemes.operand.Operand;
@@ -10,10 +12,11 @@ import ru.test.calculator.parsers.StringParsers;
 import java.util.Collection;
 import java.util.Stack;
 
-
+@Component
 public class PostfixExpression implements Expression {
     private StringParsers parser;
 
+    @Autowired
     public PostfixExpression(StringParsers parser) {
         this.parser = parser;
     }

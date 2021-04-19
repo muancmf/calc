@@ -1,5 +1,7 @@
 package ru.test.calculator.views;
 
+import org.springframework.stereotype.Component;
+
 import javax.swing.*;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.DocumentFilter;
@@ -7,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Component
 public class CalculatorView extends JFrame {
     private JTextField display = new JTextField(12);
     private JButton clearBtn = new JButton("C");
@@ -39,6 +42,7 @@ public class CalculatorView extends JFrame {
         calcPanel.add(calculateBtn);
 
         this.add(calcPanel);
+        this.setVisible(true);
     }
 
     public String getDisplayValue() {

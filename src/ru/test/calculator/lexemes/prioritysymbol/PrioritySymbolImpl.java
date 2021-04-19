@@ -8,7 +8,7 @@ public class PrioritySymbolImpl implements PrioritySymbol {
     private boolean isOpening;
     private String presentation;
 
-    PrioritySymbolImpl(boolean isOpening, String presentation) {
+    public PrioritySymbolImpl(boolean isOpening, String presentation) {
         this.type = LexemeTypes.PRIORITYSYMBOL;
         this.isOpening = isOpening;
         this.presentation = presentation;

@@ -1,5 +1,7 @@
 package ru.test.calculator.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.test.calculator.models.CalculatorModel;
 import ru.test.calculator.views.CalculatorView;
 
@@ -10,11 +12,13 @@ import javax.swing.text.DocumentFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+@Component
 public class CalculatorController {
     private CalculatorView view;
     private CalculatorModel model;
     private static final String FILTER_REGEX = "[^0-9*//+-.,()]";
 
+    @Autowired
     public CalculatorController(CalculatorView view, CalculatorModel model) {
         this.view = view;
         this.model = model;

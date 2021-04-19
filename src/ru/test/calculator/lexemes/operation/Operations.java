@@ -1,12 +1,16 @@
 package ru.test.calculator.lexemes.operation;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 import ru.test.calculator.lexemes.operand.OperandImpl;
 
 import java.util.ArrayList;
 import java.util.Collection;
 
+@Component
 public class Operations {
-    public Collection<Operation> operations() {
+    @Bean
+    public Collection<Operation> basicOperations() {
         Collection<Operation> operations = new ArrayList<>();
 
         operations.add(new OperationImpl(10, "+", (a, b) -> new OperandImpl(a.getValue() + b.getValue())));
